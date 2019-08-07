@@ -1,0 +1,33 @@
+{
+  "name": "react-native-countup-component",
+  "version": "2.5.0",
+  "description": "React Native CountUp Component",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/z4q/react-native-countup.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-component",
+    "react-native-component",
+    "react",
+    "mobile",
+    "ios",
+    "android",
+    "counter",
+    "countup"
+  ],
+  "author": {
+    "name": "Ruzaini Ourtech",
+    "email": "ruzaini@ourtech.my"
+  },
+  "homepage": "https://github.com/z4q/react-native-countup",
+  "bugs": {
+    "url": "https://github.com/z4q/react-native-countup/issues"
+  },
+  "dependencies": {
+    "lodash": "^4.0.0",
+    "sprintf-js": "^1.1.1",
+    "prop-types": "^15.5.8"
+  }
+}
