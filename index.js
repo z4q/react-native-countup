@@ -23,7 +23,7 @@ const DEFAULT_TIME_LABELS = {
   s: 'Seconds',
 };
 
-class CountDown extends React.Component {
+class CountUp extends React.Component {
   static propTypes = {
     id: PropTypes.string,
     digitStyle: PropTypes.object,
@@ -188,7 +188,7 @@ class CountDown extends React.Component {
     );
   };
 
-  renderCountDown = () => {
+  renderCountUp = () => {
     const { timeToShow, timeLabels, showSeparator } = this.props;
     const { current } = this.state;
     const { days, hours, minutes, seconds } = this.getTimeLeft();
@@ -229,11 +229,11 @@ class CountDown extends React.Component {
   };
 
   render() {
-    return <View style={this.props.style}>{this.renderCountDown()}</View>;
+    return <View style={this.props.style}>{this.renderCountUp()}</View>;
   }
 }
 
-CountDown.defaultProps = {
+CountUp.defaultProps = {
   digitStyle: DEFAULT_DIGIT_STYLE,
   digitTxtStyle: DEFAULT_DIGIT_TXT_STYLE,
   timeLabelStyle: DEFAULT_TIME_LABEL_STYLE,
@@ -283,4 +283,4 @@ const styles = StyleSheet.create({
   },
 });
 
-module.exports = CountDown;
+module.exports = CountUp;
