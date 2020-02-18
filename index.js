@@ -61,16 +61,14 @@ class CountUp extends React.Component {
     AppState.removeEventListener("change", this._handleAppStateChange);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (
-      this.props.current !== nextProps.current ||
-      this.props.id !== nextProps.id
-    ) {
-      this.setState({
-        lastCurrent: this.state.current,
+   static getDerivedStateFromProps(nextProps, prevProps) {
+    if (prevProps.current !== nextProps.current) {
+      return {
+        lastCurrent: prevProps.current,
         current: Math.max(nextProps.current, 0)
-      });
+      };
     }
+    else return null;
   }
 
   _handleAppStateChange = currentAppState => {
