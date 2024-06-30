@@ -1,25 +1,47 @@
 # react-native-countup
-React Native Countup
+
+**React Native Countup Component**
 
 ## Installation
-Run `npm install react-native-countup-component --save` OR `yarn add react-native-countup-component --save`
 
-## Props
-| Name | Description | Type | Default Value |
-| :--- | :----- | :--- | :---: |
-| id | Counter id, to determine whether to reset the counter or not | string | null |
-| style | Override the component style | object | {} |
-| digitStyle |  Digit style | object | {backgroundColor: ![#FFFFFF](https://placehold.it/15/FFFFFF/000000?text=+) `'#FFFFFF'`} |
-| digitTxtStyle | Digit Text style | object | {color: ![#FAB913](https://placehold.it/15/000000/000000?text=+) `'#000'`} |
-| timeLabelStyle | Time Label style | object | {color: ![#FAB913](https://placehold.it/15/000000/000000?text=+) `'#000'`} |
-| separatorStyle | Separator style | object | {color: ![#FAB913](https://placehold.it/15/000000/000000?text=+) `'#000'`} |
-| size | Size of the countup component | number | 15 |
-| current | Number of seconds to start countup | number | 0 |
-| max | Number of seconds to stop countup | number | 0 |
-| onFinish | What function should be invoked when the time is equal to max | func | null |
-| onChange | What function should be invoked when the timer is changing | func | null |
-| onPress | What function should be invoked when clicking on the timer | func | null |
-| timeToShow | What Digits to show | array | ['D', 'H', 'M', 'S'] |
-| timeLabels | Text to show in time label | object | {d: 'Days', h: 'Hours', m: 'Minutes', s: 'Seconds'} |
-| showSeparator | Should show separator | bool | false |
-| running | a boolean to pause and resume the component | bool | true |
+Install via npm:
+
+```bash
+npm install react-native-countup-component --save
+```
+Or using yarn:
+```bash
+yarn add react-native-countup-component --save
+```
+
+| Name           | Description                                 | Type                                                                       | Default Value                    |
+|----------------|---------------------------------------------|----------------------------------------------------------------------------|----------------------------------|
+| id             | Counter id, used to determine reset behavior | string \| undefined                                                        | undefined                        |
+| style          | Custom styles for the component              | StyleProp<ViewStyle>                                                       | {}                               |
+| digitStyle     | Style for the digits                         | StyleProp<ViewStyle>                                                       | {backgroundColor: '#FFFFFF'}      |
+| digitTxtStyle  | Style for the digit text                     | StyleProp<TextStyle>                                                       | {color: '#000'}                  |
+| timeLabelStyle | Style for the time label                     | StyleProp<TextStyle>                                                       | {color: '#000'}                  |
+| separatorStyle | Style for the separator                      | StyleProp<TextStyle>                                                       | {color: '#000'}                  |
+| size           | Size of the countup component                | number                                                                     | 15                               |
+| current        | Initial count in seconds                     | number                                                                     | 0                                |
+| max            | Maximum count in seconds                     | number                                                                     | 0                                |
+| onFinish       | Function to call when count reaches max      | (() => void) \| undefined                                                  | undefined                        |
+| onChange       | Function to call when count changes          | ((count: number) => void) \| undefined                                      | undefined                        |
+| onPress        | Function to call when component is pressed   | (() => void) \| undefined                                                  | undefined                        |
+| timeToShow     | Array specifying which digits to display     | string[]                                                                   | ['D', 'H', 'M', 'S']              |
+| timeLabels     | Labels for each time unit                    | { d?: string, h?: string, m?: string, s?: string }                          | { d: 'Days', h: 'Hours', m: 'Minutes', s: 'Seconds' } |
+| showSeparator  | Whether to display separators between digits | boolean                                                                    | false                            |
+| running        | Controls whether the component is running    | boolean                                                                    | true                             |
+
+
+### Explanation:
+
+1. **TypeScript Types**: Props are annotated with TypeScript types (`StyleProp<ViewStyle>`, `StyleProp<TextStyle>`, etc.) to indicate the expected structure and types.
+
+2. **Optional Props**: Props like `id`, `onFinish`, `onChange`, and `onPress` are marked as optional (`undefined` in TypeScript) if not always required.
+
+3. **Default Values**: Default values are specified for each prop where applicable, providing clarity on what values are used if not provided.
+
+4. **Enhanced Descriptions**: Descriptions are concise yet clear, ensuring developers understand the purpose and usage of each prop.
+
+This TypeScript-enhanced README will help developers integrate and use `react-native-countup` effectively in their TypeScript projects, ensuring type safety and clarity in prop usage.
